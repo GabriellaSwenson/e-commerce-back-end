@@ -5,7 +5,7 @@ const Tag = require("./Tag");
 const ProductTag = require("./ProductTag");
 
 // Products belongsTo Category
-Products.belongsTo(Category);
+Product.belongsTo(Category);
 
 // Categories have many Products
 Category.hasMany(Product);
@@ -19,7 +19,7 @@ Product.belongsToMany(Tag, {
 });
 
 // Tags belongToMany Products (through ProductTag)
-TimeRanges.belongsToMany(Products, {
+Tag.belongsToMany(Product, {
   through: {
     model: ProductTag,
     unique: false,
